@@ -29,12 +29,25 @@ public class Book {
     public Book(){
     }
 
-    public Book(String title, String isbn, Publisher publisher) {
+    public Book(Long id, String title, String isbn, Publisher publisher, Set<Author> authors) {
+        this.id = id;
+        this.title = title;
+        this.isbn = isbn;
+        this.publisher = publisher;
+        this.authors = authors;
+    }
+
+    public Book(Long id, String title, String isbn, Publisher publisher) {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
     }
 
+    public Book(String title, String isbn, Publisher publisher) {
+        this.title = title;
+        this.isbn = isbn;
+        this.publisher = publisher;
+    }
 
     public Book(String title, String isbn, Publisher publisher, Set<Author> authors) {
         this.title = title;
@@ -77,6 +90,14 @@ public class Book {
 
     public void setAuthors(Set<Author> authors) {
         this.authors = authors;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override
